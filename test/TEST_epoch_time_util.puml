@@ -43,3 +43,24 @@ Project starts $startAt
 [2e - $endAt] lasts 3 days
 [3ea- $endAfter] lasts 3 days
 @endgantt
+
+
+@startuml
+!include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/refs/heads/main/src/epoch_time_util.puml
+' !include https://gist.githubusercontent.com/topchul/e635a3003ab1387d2fc9d92a09dc0249/raw/991819d121612fc6c9cbe6b87362911a379e6f2f/gantt_util.puml
+
+[ $add_days("2024-12-27", 1) \n $add_days("2024-12-27", 2) \n $add_days("2024-12-27", 3) ]
+
+[%date("yyyy-MM-dd", %now() + 29*86400) \n %date("YYYY-MM-dd", %now() + 29*86400)]
+[%date("yyyy-MM-dd", %now() + 30*86400) \n %date("YYYY-MM-dd", %now() + 30*86400)]
+[%date("yyyy-MM-dd", %now() + 31*86400) \n %date("YYYY-MM-dd", %now() + 31*86400)]
+[%date("yyyy-MM-dd", %now() + 32*86400) \n %date("YYYY-MM-dd", %now() + 32*86400)]
+[%date("yyyy-MM-dd", %now() + 33*86400) \n %date("YYYY-MM-dd", %now() + 33*86400)]
+[%date("yyyy-MM-dd", %now() + 34*86400) \n %date("YYYY-MM-dd", %now() + 34*86400)]
+
+!$d29 = (%now() + 29*86400)
+!$d30 = (%now() + 30*86400)
+[$d29 \n $d30]
+
+' !dump_memory
+@enduml
