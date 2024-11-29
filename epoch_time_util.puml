@@ -31,6 +31,7 @@
     !return $time
 !endfunction
 
+$epoch_time_date = 0
 !function $add_seconds($str_date, $seconds)
     !$epoch_time_date = $to_epoch_time($str_date)
     !return %date("YYYY-MM-dd", $epoch_time_date + $seconds)
