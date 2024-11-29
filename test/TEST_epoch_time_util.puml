@@ -1,0 +1,16 @@
+@startgantt
+!include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/d04f24fd387f878c71deeedea93e2e7511522c05/src/epoch_time_util.puml
+
+[$to_epoch_time("2024-01-01")] lasts 3 days
+[$to_epoch_time("2024-02-01")] lasts 3 days
+[$to_epoch_time("2024-03-01")] lasts 3 days
+[b- $by_seconds("2024-01-01")] lasts 3 days
+[b- $by_seconds("2024-02-01")] lasts 3 days
+[b- $by_seconds("2024-03-01")] lasts 3 days
+
+[04 -> %date("yyyy-MM-dd", $to_epoch_time("2024-01-02") + 2 *3600*24)] lasts 3 days
+[06 -> $add_days("2024-01-03", 3)] lasts 3 days
+[08 -> $add_seconds("2024-01-04", 4 *86400)] lasts 3 days
+
+' !dump_memory
+@endgantt

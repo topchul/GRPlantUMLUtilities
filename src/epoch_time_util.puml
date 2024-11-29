@@ -5,7 +5,7 @@
     !$d = %intval(%substr($str_date, 8, 2)) - 1
     !$time = $firstM
 '   day
-    !$time = $time + $d
+    !$time = $time + $d *86400
 '   month
     !if (0 < $m)
         !$time = $time + 31 *86400
