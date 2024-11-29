@@ -1,5 +1,5 @@
 @startgantt
-!include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/d04f24fd387f878c71deeedea93e2e7511522c05/src/epoch_time_util.puml
+!include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/refs/heads/main/src/epoch_time_util.puml
 
 [$to_epoch_time("2024-01-01")] lasts 3 days
 [$to_epoch_time("2024-02-01")] lasts 3 days
