@@ -1,0 +1,37 @@
+!function $to_epoch_time($str_date)
+    !$firstM = 946684800
+    !$y = %intval(%substr($str_date, 0, 4)) - 2000
+    !$m = %intval(%substr($str_date, 5, 2)) - 1
+    !$d = %intval(%substr($str_date, 8, 2)) - 1
+    !$time = $firstM
+'   day
+    !$time = $time + $d
+'   month
+    !if (0 < $m)
+        !$time = $time + 31 *86400
+    !endif
+    !if (1 < $m)
+        !$time = $time + 28 *86400
+    !endif
+    !if (2 < $m)
+        !$time = $time + 31 *86400
+    !endif
+'   year
+    !$time = $time + $y *365*86400
+'   윤달
+    !if ($y / 4 == ($y + 3) / 4)
+        !if (2 <= $m)
+            !$time = $time + (1 + $y / 4) *86400
+        !else
+            !$time = $time + ($y / 4) *86400
+        !endif
+    !else
+            !$time = $time + (1 + $y / 4) *86400
+    !endif
+    !return $time
+!endfunction
+
+!function $add_days($str_date, $days)
+    !$epoch_time = $to_epoch_time($str_date)
+    !return %date("YYYY-MM-dd", $epoch_time + $days)
+!endfunction
