@@ -16,6 +16,30 @@
     !if (2 < $m)
         !$time = $time + 31 *86400
     !endif
+    !if (3 < $m)
+        !$time = $time + 30 *86400
+    !endif
+    !if (4 < $m)
+        !$time = $time + 31 *86400
+    !endif
+    !if (5 < $m)
+        !$time = $time + 30 *86400
+    !endif
+    !if (6 < $m)
+        !$time = $time + 31 *86400
+    !endif
+    !if (7 < $m)
+        !$time = $time + 31 *86400
+    !endif
+    !if (8 < $m)
+        !$time = $time + 30 *86400
+    !endif
+    !if (9 < $m)
+        !$time = $time + 31 *86400
+    !endif
+    !if (10 < $m)
+        !$time = $time + 30 *86400
+    !endif
 '   year
     !$time = $time + $y *365*86400
 '   윤달

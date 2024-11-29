@@ -1,4 +1,4 @@
-@startgantt
+@startgantt Test base functionalities
 !include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/refs/heads/main/src/epoch_time_util.puml
 
 [$to_epoch_time("2024-01-01")] lasts 3 days
@@ -13,4 +13,33 @@
 [08 -> $add_seconds("2024-01-04", 4 *86400)] lasts 3 days
 
 ' !dump_memory
+@endgantt
+
+
+@startgantt Test  add_days with Nov
+!include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/refs/heads/main/src/epoch_time_util.puml
+' !include https://gist.githubusercontent.com/topchul/e635a3003ab1387d2fc9d92a09dc0249/raw/67d5625181582d0283968cc5f88d6f8eeae90af6/gantt_util.puml
+
+' 달력 설정
+printscale daily zoom 1.8
+printscale weekly zoom 7
+printscale weekly with calendar date zoom 7
+language ko
+
+saturday are closed
+sunday are closed
+
+' 프로젝트
+!$startAt = "2024-12-27"
+!$endAt = $add_days($startAt, 2 *5 + 2)
+!$endAfter = $add_days($endAt, 3)
+
+$endAt to $endAfter are named [종료]
+$endAt to $endAfter are colored Salmon
+
+Project starts $startAt
+
+[1s - $startAt] lasts 3 days
+[2e - $endAt] lasts 3 days
+[3ea- $endAfter] lasts 3 days
 @endgantt
