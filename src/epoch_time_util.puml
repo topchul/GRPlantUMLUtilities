@@ -5,7 +5,7 @@
     !$d = %intval(%substr($str_date, 8, 2)) - 1
     !$time = $firstM
 '   day
-    !$time = $time + $d
+    !$time = $time + $d *86400
 '   month
     !if (0 < $m)
         !$time = $time + 31 *86400
@@ -31,16 +31,9 @@
     !return $time
 !endfunction
 
-!$epoch_time_date = 0
-!function $by_seconds($str_date)
-    !$epoch_time_date = $to_epoch_time($str_date)
-    !return $epoch_time_date
-!endfunction
-
 !function $add_seconds($str_date, $seconds)
     !$epoch_time_date = $to_epoch_time($str_date)
-    !$epoch_time_date = $epoch_time_date + $seconds
-    !return %date("YYYY-MM-dd", $epoch_time_date)
+    !return %date("YYYY-MM-dd", $epoch_time_date + $seconds)
 !endfunction
 
 !function $add_days($str_date, $days)
