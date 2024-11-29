@@ -31,7 +31,11 @@
     !return $time
 !endfunction
 
-!function $add_days($str_date, $days)
+!function $add_seconds($str_date, $seconds)
     !$epoch_time = $to_epoch_time($str_date)
-    !return %date("YYYY-MM-dd", $epoch_time + $days)
+    !return %date("YYYY-MM-dd", $epoch_time + $seconds)
+!endfunction
+
+!function $add_days($str_date, $days)
+    !return $add_seconds($str_date, $days *86400)
 !endfunction
