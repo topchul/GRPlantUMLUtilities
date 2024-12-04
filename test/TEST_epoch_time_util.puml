@@ -47,7 +47,7 @@ Project starts $startAt
 
 @startuml
 !include https://raw.githubusercontent.com/topchul/GRPlantUMLUtilities/refs/heads/main/src/epoch_time_util.puml
-' !include https://gist.githubusercontent.com/topchul/e635a3003ab1387d2fc9d92a09dc0249/raw/991819d121612fc6c9cbe6b87362911a379e6f2f/gantt_util.puml
+' !include http://localhost:8001/epoch_time_util.puml
 
 [ $add_days("2024-12-27", 1) \n $add_days("2024-12-27", 2) \n $add_days("2024-12-27", 3) ]
 

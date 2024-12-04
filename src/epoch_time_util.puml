@@ -1,56 +1,59 @@
+!$day_time_scale = 86400
+
 !function $to_epoch_time($str_date)
+
     !$firstM = 946684800
     !$y = %intval(%substr($str_date, 0, 4)) - 2000
     !$m = %intval(%substr($str_date, 5, 2)) - 1
     !$d = %intval(%substr($str_date, 8, 2)) - 1
     !$time = $firstM
 '   day
-    !$time = $time + $d *86400
+    !$time = $time + $d *$day_time_scale
 '   month
     !if (0 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (1 < $m)
-        !$time = $time + 28 *86400
+        !$time = $time + 28 *$day_time_scale
     !endif
     !if (2 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (3 < $m)
-        !$time = $time + 30 *86400
+        !$time = $time + 30 *$day_time_scale
     !endif
     !if (4 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (5 < $m)
-        !$time = $time + 30 *86400
+        !$time = $time + 30 *$day_time_scale
     !endif
     !if (6 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (7 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (8 < $m)
-        !$time = $time + 30 *86400
+        !$time = $time + 30 *$day_time_scale
     !endif
     !if (9 < $m)
-        !$time = $time + 31 *86400
+        !$time = $time + 31 *$day_time_scale
     !endif
     !if (10 < $m)
-        !$time = $time + 30 *86400
+        !$time = $time + 30 *$day_time_scale
     !endif
 '   year
-    !$time = $time + $y *365*86400
+    !$time = $time + $y *365*$day_time_scale
 '   윤달
     !if ($y / 4 == ($y + 3) / 4)
         !if (2 <= $m)
-            !$time = $time + (1 + $y / 4) *86400
+            !$time = $time + (1 + $y / 4) *$day_time_scale
         !else
-            !$time = $time + ($y / 4) *86400
+            !$time = $time + ($y / 4) *$day_time_scale
         !endif
     !else
-            !$time = $time + (1 + $y / 4) *86400
+            !$time = $time + (1 + $y / 4) *$day_time_scale
     !endif
     !return $time
 !endfunction
@@ -61,5 +64,5 @@
 !endfunction
 
 !function $add_days($str_date, $days)
-    !return $add_seconds($str_date, $days *86400)
+    !return $add_seconds($str_date, $days *$day_time_scale)
 !endfunction
